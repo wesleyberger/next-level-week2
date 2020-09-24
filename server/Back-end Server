@@ -1,0 +1,74 @@
+Preparando Back-end Server !!!
+
+-Pasta server:
+  npm init -y 
+
+-Pasta src:
+  criar pasta: "src" + arquivo "server.ts"
+  
+-Pasta Raiz:  
+  instalar TypeScript: 
+    >> npm install typescript -D
+  
+  criar arquivo de config TypeScript:
+    >> npx tsc --init
+
+  executa o script node e quando vê mudanças faz auto-reload
+  npm i ts-node-dev --save-dev
+
+  Instalar Framework Express:
+    >> npm install Express
+
+-Arquivo "package-json" add script: Para atualização quando houver mudanças, além disso, ignora a leitura do node_modules para transformar Ts em Js.
+  "start": "tsnd --transpile-only --ignore-watch node_modules --respawn src/server.ts"
+
+-Arquivo "server.ts":
+  configuração compatibilidade de tipagem para importar o express no Node usando TypeScript:
+  >> npm install @types/express -D
+
+- Instalar knex e sqlite3: o knex possibilita utilizar a linguem SQL em JS.
+  >> npm install knex sqlite3
+
+ROTAS!
+
+-Instalar insominia para teste de rotas.
+
+Glossário:
+
+-Metodos HTTP:
+  GET: listar ou buscar info.
+  POST: criar info.
+  PUT: atualizar info.
+  DELETE: deletar info
+
+-Parametros de Requisição
+  Corpo: request.body (dados para criação ou atualização de um arquivo).
+  Route Params: identificar um recurso na rota, por exemplo atualizar ou deletar info 
+                já que o recurso nesse caso é unico, no caso sendo um del ou atualizar de um usuário.
+  Query Params: usado para listagem, paginação com parametros, ordenação, filtros, entre outros! :D
+
+-Necessário configurar o express para funcionar com Json:
+  Arquivo "server.ts" add:
+    app.use(express.json());
+
+
+Casos de uso!
+
+-funcionalidades (#entidades)
+  
+# Conexões
+  Rota para listar  o total de Conexões realizadas.
+
+# Aulas
+  Rota prar criação de aula.
+  Rota para listagem de aulas.
+    - filtrar por: dia da semana/horário.
+
+
+-Install Cors! permite que endereços externos usem a API
+  >> npm install cors 
+
+-install Axios para consumo de API's 
+  !(Pasta Web Front-end)
+    >> npm install axios 
+

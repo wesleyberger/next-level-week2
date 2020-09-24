@@ -1,0 +1,10 @@
+{
+  "sqltools.connections": [
+    {
+      "database": "/home/root_000/Desktop/Projetos/Omnistack/backend/src/database/db.sqlite",
+      "driver": "SQLite",
+      "name": "we",
+      "previewLimit": 50
+    }
+  ]
+}
